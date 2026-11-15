@@ -1,0 +1,27 @@
+# İşletim sistemi
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editör
+.vscode/
+.idea/
+*.swp
+*~
+
+# Gizli bilgiler: API anahtarlarını ve belirteçleri ASLA depoya koymayın
+.env
+.env.*
+*.pem
+*.key
+secrets.*
+
+# Müzik dosyalarını depoya yüklemeyin (telif hakkı)
+*.mp3
+*.flac
+*.wav
+*.ogg
+*.m4a
+*.aac
+*.wma
+*.aiff
