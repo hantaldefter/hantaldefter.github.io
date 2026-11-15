@@ -1,6 +1,7 @@
 # hantal defter
 
-DEHB dostu, tek odaklı görev ve pomodoro uygulaması. HTML tabanlıdır, kurulum ya da sunucu gerektirmez.
+
+Bu sitede görmüş olduğunuz bütün kadınlar yazma disiplinlerine ve yaratıcılıklarına hayran olduğum kadınlardır (ve daha niceleri). Burayı birkaç yıldır düşündüğüm bir projeyi hayata geçirmek için, kodlama öğrenme basamağı olarak hazırladım. Bu ilk basamağı adımlarken tek istediğim hayran olduğum kadın yazarların disiplinine ulaşmaktır. Hantal Defter bu sebeple hem görev takibi hem pomodoro olarak tasarlanmıştır ve HTML tabanlı kodlanmıştır. Bütün açık kaynaklara yukarıdaki linklerden ulaşabilirsiniz. Dilediğiniz gibi kullanmakta özgürsünüz. Benimle ezgitspnr99@gmail.com mail adresi üzerinden iletişime geçebilirsiniz ve bu beni çok mutlu eder. Bütün yazma süreçlerinde Ellipsus kullandığım için onlara da köprü oluşturmak istiyorum. Logosuna tıklayarak siteye ulaşabilirsiniz.
 
 ## Nasıl çalışır
 
