@@ -10,6 +10,21 @@ Bu sitede görmüş olduğunuz bütün kadınlar yazma disiplinlerine ve yaratı
 - Her biten görev bir yıldız kazandırır. 10 yıldız, dört pomodoro sonrasındaki molaya +5 dakika ek mola hakkı verir (mola 15 dakikadır).
 - Mola ve odak başlarken, sayacı durdurmaya çalışırken kedi miyavları çalar.
 - Kendi müziklerini (FLAC, MP3, WAV, OGG, M4A, AAC) ekleyip dinleyebilirsin. Dosyalar yalnızca kendi tarayıcında saklanır.
+- Sayacı sayfadan ayırıp gezdirebilirsin: **ayrı aç** ve **masaüstü** butonları (aşağıda anlatılıyor).
+
+## Ayrı aç ve masaüstü
+
+Başka sekmelere ya da uygulamalara geçtiğinde de sayacı görebilmen için iki buton var:
+
+- **ayrı aç:** Görev, mod, süre, başlat/durdur, sıfırla ve "bu görevi bitir!" butonlarının olduğu küçük bir pencere açar. Pencerenin boyutunu değiştirdikçe içerik de orantılı olarak büyür ya da küçülür. Document Picture-in-Picture API kullanır.
+- **masaüstü:** Tarayıcının video Picture-in-Picture özelliğiyle sayacı küçük bir pencerede gösterir. Bu pencere tarayıcının dışında, diğer uygulamaların üstünde de kalır. Pencere bir görüntü olduğu için butonu yoktur. Medya tuşlarından ⏯ sayacı başlatır/durdurur, ⏭ görevi bitirir.
+
+Notlar:
+
+- İki buton da Chromium tabanlı tarayıcılarda (Chrome, Edge, Opera) çalışır. Firefox, Safari ve telefonlarda butonlar görünmez.
+- Sayaç arka plandaki sekmelerde de akıcı kalsın diye Web Worker ile çalışır.
+- Masaüstü penceresinde durdurma sırasında kedili "emin misin?" sorusu çıkmaz, çünkü soru ana sekmede kalır ve görünmez.
+- Butonlardaki kedi çizimleri `index.html` içine gömülüdür, ayrı dosya gerekmez.
 
 ## Çalıştırma
 
