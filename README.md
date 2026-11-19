@@ -3,6 +3,9 @@
 
 Bu sitede görmüş olduğunuz bütün kadınlar yazma disiplinlerine ve yaratıcılıklarına hayran olduğum kadınlardır (ve daha niceleri). Burayı birkaç yıldır düşündüğüm bir projeyi hayata geçirmek için, kodlama öğrenme basamağı olarak hazırladım. Bu ilk basamağı adımlarken tek istediğim hayran olduğum kadın yazarların disiplinine ulaşmaktır. Hantal Defter bu sebeple hem görev takibi hem pomodoro olarak tasarlanmıştır ve HTML tabanlı kodlanmıştır. Bütün açık kaynaklara yukarıdaki linklerden ulaşabilirsiniz. Dilediğiniz gibi kullanmakta özgürsünüz. Benimle ezgitspnr99@gmail.com mail adresi üzerinden iletişime geçebilirsiniz ve bu beni çok mutlu eder. Bütün yazma süreçlerinde Ellipsus kullandığım için onlara da köprü oluşturmak istiyorum. Logosuna tıklayarak siteye ulaşabilirsiniz.
 
+Güncellemeler:
+20.11.2026 - ayrı aç ve masaüstünde aç olarak iki buton eklendi.
+
 ## Nasıl çalışır
 
 - Günde en fazla 5 görev girersin.
