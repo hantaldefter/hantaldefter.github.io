@@ -358,7 +358,13 @@ function meow(){try{const c=newCtx();const t=c.currentTime;const o=c.createOscil
 function placePop(pop,maxH){const f=document.querySelector('.foot');const top=f.getBoundingClientRect().top+window.scrollY;pop.classList.toggle('below',top<maxH+16)}
 window.APPVOL=0.75;window.__touch=false;window.addEventListener('pointerdown',e=>{window.__touch=e.pointerType==='touch'},true);
 function newCtx(){const c=new(window.AudioContext||window.webkitAudioContext)();const g=c.createGain();g.gain.value=window.APPVOL;g.connect(c.destination);Object.defineProperty(c,'destination',{value:g});return c}
-function playFile(src){try{const a=new Audio(src);a.volume=Math.max(0,Math.min(1,window.APPVOL));a.play().catch(()=>chime())}catch(e){chime()}}
+// Sesleri önceden yükle ve tekrar kullan: her seferinde yeniden indirilip çözülmesin (gecikme buradan geliyordu)
+const SFX={};
+function sfx(src){if(!SFX[src]){const a=new Audio();a.preload='auto';a.src=src;try{a.load()}catch(e){}SFX[src]=a}return SFX[src]}
+function playFile(src){try{const a=sfx(src);a._real=true;a.muted=false;a.volume=Math.max(0,Math.min(1,window.APPVOL));a.currentTime=0;const p=a.play();if(p&&p.catch)p.catch(()=>chime())}catch(e){chime()}}
+['meow-mola-basi','meow-mola-sonu','miyav-uyari','miyav-odak-basi'].forEach(n=>sfx('assets/sounds/'+n+'.mp3'));
+// İlk dokunuşta sesleri sessizce "uyandır": telefonlar sonradan sayaçtan gelen sesleri engellemesin
+window.addEventListener('pointerdown',function u(){window.removeEventListener('pointerdown',u,true);Object.values(SFX).forEach(a=>{a.muted=true;const p=a.play();if(p&&p.then)p.then(()=>{if(!a._real){a.pause();a.currentTime=0}a.muted=false}).catch(()=>{a.muted=false})})},true);
 function chime(){try{const c=newCtx();const t=c.currentTime;[660,880].forEach((fr,i)=>{const o=c.createOscillator();const g=c.createGain();o.type='sine';o.frequency.value=fr;o.connect(g);g.connect(c.destination);const s=t+i*.25;g.gain.setValueAtTime(0,s);g.gain.linearRampToValueAtTime(.25,s+.03);g.gain.exponentialRampToValueAtTime(.001,s+1.2);o.start(s);o.stop(s+1.25)})}catch(e){}}
 function playMeow(){playFile('assets/sounds/meow-mola-basi.mp3')}
 function playMeow2(){playFile('assets/sounds/meow-mola-sonu.mp3')}
@@ -420,7 +426,7 @@ $('toggle').onclick=()=>{
   },250);
   show();
 };
-$('reset').onclick=()=>{const run=(!isBreak&&(tick||left<FOCUS))||(S.pomos||0)>0;const go=()=>{bonusNote=0;S.pomos=0;save();resetTimer()};if(run)ask(go);else go()};
+$('reset').onclick=()=>{const run=(!isBreak&&(tick||left<FOCUS))||(S.pomos||0)>0||(S.stars||0)>0;const go=()=>{bonusNote=0;S.pomos=0;S.stars=0;save();renderStars();resetTimer()};if(run)ask(go);else go()};
 $('finish').onclick=()=>{const i=pickCur();if(i>-1){S.tasks[i].done=true;S.cur=null;S.stars=(S.stars||0)+1;flash()}save();resetTimer();render()};
 $('newday').onclick=()=>{S={date:today(),tasks:[],started:false,stars:S.stars||0,pomos:0};save();resetTimer();render()};
 
